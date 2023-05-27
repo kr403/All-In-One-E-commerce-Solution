@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/admin.css">
+   <title>Admin Panel</title>
+</head>
+<body>
+   <nav class="nav">
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
+      <div class="search-bar-container">
+         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
+         <ul class="search-suggestions" id="search-suggestions">
+         </ul>
+      </div>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown">
+            <%if(user) {%>
+               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
+               <li><a href="/shop/create">New Shop</a></li>
+               <li><a href="/cart">My Cart</a></li>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="verifyproducts">
+         <p>Verify Products</p>
+         
+      </div>
+      <div class="user-control">
+         <p>Search For Users</p>
+         <div class="user-search-container">
+            <input type="text" class="user-search" id="user-search">
+            <ul class="user-search-suggestions" id="user-search-suggestions">
+            </ul>
+         </div>
+         <ul class="user-result-container" id="user-result-container">
+         </ul>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/addProduct.css">
+   <title>New Product</title>
+</head>
+<body>
+   <nav class="nav">
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
+      <div class="search-bar-container">
+         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
+         <ul class="search-suggestions" id="search-suggestions">
+         </ul>
+      </div>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown">
+            <%if(user) {%>
+               <li><a href="/cart">My Cart</a></li>
+               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
+               <%if(user.type === 'admin') {%>
+                  <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <%if(user.type === 'moderator') {%>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="form-container upload-form-container">
+         <form class="form" id="form" method="POST" enctype="multipart/form-data">
+            <h1 class="form-header">New Product</h1>
+            <input class="form-input" type="text" id ="name" name="name" placeholder="Name">
+            <input class="form-input" type="text" id ="price" name="price" placeholder="Price">
+            <div class="upload-main-container">
+               <div class="upload-container" id="upload-container">
+                  <div class="image-container">
+                     <img src="" alt="" id="preview-image" class="preview-image">
+                  </div>
+                  <div class="content">
+                     <div class="upload-text">Upload an Image.</div>
+                  </div>
+                  <div class="cancel-button" id="cancel-button">
+                     X
+                  </div>
+               </div>
+               <div class="file-container">
+                  <input type="file" name="file" id="file-input" accept="image/*" hidden>
+                  <button type="button" class="main-button" id="main-button">UPLOAD</button>
+               </div>
+            </div>
+            <textarea name="description" class="description" placeholder="Description"></textarea>
+            <button type="button" class="btn form-btn" id="new-shop">Add Product</button>
+         </form>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/addProduct.js"></script>
+</body>
+</html>

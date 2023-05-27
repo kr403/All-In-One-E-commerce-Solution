@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>E-commerce Solution </title>
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+   <nav class="nav">
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
+      <div class="search-bar-container">
+         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
+         <ul class="search-suggestions" id="search-suggestions">
+         </ul>
+      </div>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown">
+            <%if(user) {%>
+               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
+               <%if(user.type === 'admin') {%>
+                  <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <%if(user.type === 'moderator') {%>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <li><a href="/shop/create">New Shop</a></li>
+               <li><a href="/cart">My Cart</a></li>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <h1 class="heading">Recent shops</h1>
+      <div class="card-container">
+         <%shops.forEach(shop => {%>
+            <a class="card" href="/shop/<%=shop.id%>">
+               <img src="/images/<%=shop.image%>" class="card-image">
+               <p class="card-name"><%=shop.name%></p>
+               <p class="card-price">Rating: <%=shop.rating%>/5</p>
+            </a>
+         <%})%>
+      </div>
+      <h1 class="heading">Recent products</h1>
+      <div class="card-container">
+         <%products.forEach(shop => {%>
+            <a class="card" href="/product/<%=shop.id%>">
+               <img src="/images/<%=shop.image%>" class="card-image">
+               <p class="card-name"><%=shop.name%></p>
+               <p class="card-price">Rating: <%=shop.rating%>/5</p>
+            </a>
+         <%})%>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

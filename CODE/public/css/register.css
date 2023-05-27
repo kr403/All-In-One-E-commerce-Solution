@@ -1,0 +1,11 @@
+.main-body{
+    display: flex;
+    height: calc(100vh - 133px);
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
+.header {
+    color: rgb(54, 73, 64);
+    font-size: 50px;
+}

@@ -1,0 +1,188 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap');
+
+/* Variable declarations */
+:root {
+   /* Colors */
+   --green-primary: hsl(146, 69%, 47%);
+   --green-secondary: hsl(146, 74%, 57%);
+   --green-light-primary: hsl(152, 90%, 81%);
+   --dark-primary: hsl(220, 11%, 15%);
+   --dark-secondary: hsl(0, 0%, 29%);
+   --white-primary: hsl(12, 33%, 94%);
+   --gray-primary: hsl(214, 13%, 76%);
+   --orange-primary: hsl(0, 100%, 63%);
+   --orange-secondary: hsl(0, 100%, 67%);
+   /* Values */
+   --border-radius-primary: 5px;
+   --border-radius-extreme: 10px;
+}
+/* Basic styling for all pages. */
+* {
+   margin: 0px;
+   padding: 0px;
+   font-family: Roboto, sans-serif;
+}
+a {
+   text-decoration: none;
+   color: black;
+}
+body {
+   background-color: var(--white-primary);
+}
+/* Basic classes for all pages. */
+.btn {
+   margin: 0.5rem;
+   padding: 0.75rem;
+   font-size: 1.5rem;
+   border: 0px;
+   outline: none;
+   background-color: var(--green-primary);
+   cursor: pointer;
+   border-radius: var(--border-radius-primary);
+}
+.btn:hover{
+   background-color: var(--green-secondary);
+}
+.hidden {
+   display: none;
+}
+.form-container{
+   background-color: var(--green-light-primary);
+   width: 400px;
+   padding: 30px 0px;
+   box-shadow: 0px 0px 30px -10px black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.form{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.form > * {
+   margin-bottom: 0.5em;
+}
+.form-header {
+   color: var(--dark-secondary);
+   font-size: 50px;
+}
+.form-input{
+   box-sizing: border-box;
+   width: 80%;
+   padding: 0.25em;
+   outline: none;
+   font-size: 1.5rem;
+}
+.form-select {
+   width: 80%;
+   padding: 0.25em;
+   font-size: 1.5rem;
+}
+.form-btn {
+   box-sizing: border-box;
+   width: 80%;
+   text-align: center;
+}
+.form-redirect {
+   color: var(--orange-primary);
+}
+/* For the nav bar that all pages are using. */
+.nav {
+   background-color:var(--dark-primary);
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: nowrap;
+   padding: 1em 1em;
+}
+.main-header {
+   color: white;
+   font-size: 1.25rem;
+   text-align: center;
+   width: 5.5rem;
+}
+.search-bar-container {
+   width: calc(100% - 10.5rem);
+   max-width: 800px;
+   position: relative;
+   z-index: 1;
+}
+.search-bar{
+   outline:none;
+   font-size: 30px;
+   width: 100%;
+   height: 100%;
+   border: 0;
+   padding: 0rem 0.5rem;
+}
+.search-suggestions {
+   width: 100%;
+   position: absolute;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   box-shadow: 0px 0px 10px -5px black;
+   overflow: hidden;
+}
+.search-suggestions li {
+   list-style: none;
+   background: var(--green-primary);
+   cursor: pointer;
+   font-size: 1.25rem;
+}
+.search-suggestions li:hover {
+   background: var(--green-secondary);
+}
+.search-suggestions li a {
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   margin: 0.5em;
+}
+.dropdown-container {
+   width: 2.5rem;
+   position: relative;
+   z-index: 1;
+}
+.dropdown {
+   color: rebeccapurple;
+   position: absolute;
+   transition: all .4s;
+   text-align: end;
+   width: 15em;
+   right: 0em;
+   opacity: 0;
+   border-radius: 5px;
+   overflow: hidden;
+   pointer-events: none;
+   transform: translateY(-20px);
+   box-shadow: 0px 0px 20px -10px black;
+}
+.dropdown li {
+   font-size: 20px;
+   background-color: gainsboro;
+   list-style: none;
+   width: 100%;
+   height: 50px;
+}
+.dropdown li a{
+   width: 100%;
+   height: 100%;
+   display: inline-block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.dropdown li:hover {
+   background-color: aliceblue;
+}
+.dropdown-hamburger {
+   width: 100%;
+   text-align: end;
+   font-size: 35px;
+   background-color: transparent;
+   outline: none;
+   border: none;
+   color: white;
+   cursor: pointer;
+}

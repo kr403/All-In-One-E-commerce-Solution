@@ -1,0 +1,110 @@
+.main-body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 70vh;
+   padding: 5em 0em;
+}
+.information-container {
+   display: flex;
+   margin-bottom: 2em;
+   padding: 0em 2em;
+   max-width: 800px;
+   width: 80vw;
+   background-color: #39d57c;
+   font-size: 20px;
+   border-radius: 5px;
+   box-shadow: 0px 0px 15px -5px black;
+}
+.name-label {
+   width: 40%;
+   padding: 1em;
+}
+.quantity-label {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.price-label {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.cart-container {
+   display: flex;
+   flex-direction: column;
+   max-width: 800px;
+   width: 80vw;
+   background-color: #e4e4e4;
+   padding: 2em;
+   font-size: 20px;
+   border-radius: 5px;
+   box-shadow: 0px 0px 15px -5px black;
+}
+.cart {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.item-container {
+   width: 100%;
+   height: 3em;
+   display: flex;
+   margin-bottom: 1em;
+}
+.item {
+   width: 90%;
+   display: flex;
+   border-radius: 7px;
+   overflow: hidden;
+}
+.name {
+   width: 55%;
+   padding: 1em;
+   background-color: rgb(192, 192, 192);
+}
+.quantity {
+   width: 10%;
+   background-color: #82e4ac;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.price {
+   width: 35%;
+   background-color: #23be66;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.btn-container {
+   display: flex;
+   justify-content: space-between;
+   padding: 0px 10%;
+}
+.checkout-btn {
+   padding: 0.5em 2em;
+   border-radius: 0.2em;
+}
+.clear-btn {
+   font-size: 20px;
+   padding: 0.5em 1em;
+   background-color: var(--orange-primary);
+   border-radius: 0.2em;
+}
+.clear-btn:hover {
+   background-color: var(--orange-secondary);
+}
+.delete-btn {
+   width: 10%;
+   font-size: 40px;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   color: var(--orange-primary);
+}

@@ -1,0 +1,112 @@
+.main-body {
+   display: flex;
+   flex-direction: column;
+}
+.info-heading {
+   text-align: center;
+   padding: 0.5em 0em;
+}
+/* Code for beautiful uploader starts here*/
+.update-form {
+   box-sizing: border-box;
+   width: 100%;
+   padding: 1rem 5%;
+   margin-bottom: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.upload-main-container {
+   width: 100%;
+   max-width: 60rem;
+}
+.upload-container {
+   position: relative;
+   height: 300px;
+   width: calc(100% - 8px); /*Minus for border*/
+   border-radius: var(--border-radius-primary);
+   border: 4px dashed var(--gray-primary);
+   background: var(--white-primary);
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 10px;
+}
+.image-container {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.preview-image {
+   height: 100%;
+   width: 100%;
+   object-fit: fill;
+   display: none;
+}
+.cancel-button {
+   position: absolute;
+   right: 15px;
+   top: 15px;
+   font-size: 2rem;
+   cursor: pointer;
+   color: var(--orange-primary);
+   display: none;
+}
+.main-button {
+   width: 100%;
+   padding: 15px 0px;
+   border: none;
+   background-color: var(--green-primary);
+   border-radius: var(--border-radius-primary);
+   color: white;
+   font-size: 20px;
+   cursor: pointer;
+   outline: none;
+}
+.main-button:hover {
+   background-color: var(--green-secondary);
+}
+.active {
+   border: 4px solid var(--gray-primary);
+}
+.upload-container.active .cancel-button {
+   display: block;
+}
+.upload-container.active .cancel-button:hover {
+   color: var(--orange-secondary);
+}
+.upload-text {
+   font-size: 30px;
+   color: var(--dark-primary);
+}
+/* Code for beautiful uploader ends here*/
+.update-btn {
+   width: 100%;
+   max-width: 60rem;
+   border-radius: 5px;
+   margin: 10px 0px;
+   padding: 10px 0px;
+}
+/* Code for info update forms starts here. */
+.info-name {
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 60rem;
+   font-size: 1.25rem;
+   padding: .25rem;
+   margin-bottom: 1em;
+   outline: none;
+}
+.select {
+   margin-bottom: 1em;
+   width: 100%;
+   max-width: 60rem;
+   font-size: 1.25rem;
+   padding: 0.25rem;
+   outline: none;
+   cursor: pointer;
+}

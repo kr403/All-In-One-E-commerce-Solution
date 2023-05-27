@@ -1,0 +1,7 @@
+.main-body{
+   display: flex;
+   height: calc(100vh - 133px);
+   justify-content: center;
+   align-items: center;
+   min-height: 800px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/checkout.css">
+   <title>Checkout</title>
+</head>
+<body>
+   <nav class="nav">
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
+      <div class="search-bar-container">
+         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
+         <ul class="search-suggestions" id="search-suggestions">
+         </ul>
+      </div>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown">
+            <%if(user) {%>
+               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
+               <li><a href="/user/<%=user.id%>"><%=user.name%></a></li>
+               <%if(user.type === 'admin') {%>
+                  <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <%if(user.type === 'moderator') {%>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <li><a href="/shop/create">New Shop</a></li>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <form class="checkout-information" id="form" action="/checkout" method="POST">
+         <label for="delivery-address" class="prompt">
+            Delivery Location. Please Give your full Address.
+         </label>
+         <textarea class="delivery-address" name="delivery-address" id="delivery-information" cols="40" rows="3" placeholder="Type your address here."></textarea>
+         <p class="prompt">Please choose your payment method.</p>
+         <div class="radio-btns">
+            <label class="radio-btn">
+               <input class="radio" id="bKash-radio" type="radio" name="input-method" checked>
+               <span class="check"></span>
+            </label>
+            <span class="label-content">bKash</span>
+            <label class="radio-btn">
+               <input class="radio" type="radio" name="input-method">
+               <span class="check"></span>
+            </label>
+            <span class="label-content">Cash on Delivery</span>
+         </div>
+         <div id="bKash-number-container" class="bKash-number-container">
+            <label for="bKash-number" class="prompt">Your bKash Number:</label>
+            <input class="bKash" id="bKash-number" type="text" name="bKash-number">
+         </div>
+         <button class="btn buy-btn" id="submit">BUY NOW</button>
+      </form>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/checkout.js"></script>
+</body>
+</html>

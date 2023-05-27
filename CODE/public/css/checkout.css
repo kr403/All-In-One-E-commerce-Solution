@@ -1,0 +1,75 @@
+.main-body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5vh 0px;
+}
+.delivery-address {
+   resize: none;
+   outline: none;
+   padding: 0.3em;
+   font-size: 20px;
+   border-radius: 5px;
+}
+.checkout-information {
+   display: flex;
+   flex-direction: column;
+   max-width: 800px;
+   width: 80vw;
+   padding: 2em;
+   border-radius: 5px;
+   background-color: #e4e4e4;
+   box-shadow: 0px 0px 10px black;
+}
+.checkout-information > * {
+   margin-bottom: 1em;
+}
+.radio-btns {
+   display: flex;
+}
+.radio {
+   display: none;
+}
+.radio-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 25px;
+   height: 25px;
+   margin-right: 1em;
+   border: 2px solid #40e286;
+   border-radius: 50%;
+   cursor: pointer;
+}
+.check {
+   display: inline-block;
+   width: calc(100% - 8px);
+   height: calc(100% - 8px);
+   background-color: #26cc6e;
+   border-radius: 50%;
+   opacity: 0;
+   transition: all 0.6s ease;
+}
+.radio-btn input:checked + .check {
+   opacity: 1;
+}
+.label-content {
+   font-size: 20px;
+   margin-right: 2em;
+}
+.prompt {
+   font-size: 30px;
+}
+.bKash {
+   width: 15em;
+   height: 1em;
+   outline: none;
+   padding: 0.3em;
+   font-size: 20px;
+}
+.buy-btn {
+   border-radius: 5px;
+}
+.bKash-number-container {
+   transition: all 0.5s ease-out;
+}

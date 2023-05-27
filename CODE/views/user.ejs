@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Page</title>
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/user.css">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+   <nav class="nav">
+      <div class="main-header">
+         <a href="/"><img src="/images/logo.ico" alt="eCommerce Solution"></a>
+      </div>
+      <div class="search-bar-container">
+         <input class="search-bar" id="search-bar" type="text" placeholder="Search.....">
+         <ul class="search-suggestions" id="search-suggestions">
+         </ul>
+      </div>
+      <div class="dropdown-container">
+         <button id="dropdown-hamburger" class="dropdown-hamburger">&#9776;</button>
+         <ul id="dropdown" class="dropdown">
+            <%if(user) {%>
+               <%if(user.type === 'admin') {%>
+                  <li><a href="/moderation/admin">Admin Panel</a></li>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <%if(user.type === 'moderator') {%>
+                  <li><a href="/moderation/moderator">Moderation</a></li>
+               <%}%>
+               <li><a href="/shop/create">New Shop</a></li>
+               <li><a href="/cart">My Cart</a></li>
+               <li><a href="/auth/logout">Sign Out</a></li>
+            <%} else {%>
+               <li><a href="/auth/register">Sign Up</a></li>
+               <li><a href="/auth/login">Sign In</a></li>
+            <%}%>
+         </ul>
+      </div>
+   </nav>
+   <div class="main-body">
+      <div class="page-nav-container">
+         <div class="button-container">
+            <button class="nav-button" id="my-info">My Info</button>
+            <button class="nav-button" id="my-shops">My Shops</button>
+            <button class="nav-button" id="change-info">Change Info</button>
+            <button class="nav-button" id="change-password">Change Password</button>
+         </div>
+      </div>
+      <div class="user-container">
+         <div class="info-container" id="user-info-container">
+            <a href="/changeprofile">
+               <div class="profile-image user-info">
+                  <img class="img" src="/images/<%=user.image%>" alt="">
+               </div>
+            </a>
+            <h3 class="user-info">Name: <%=user.name%></h3>
+            <h3 class="user-info">Email: <%=user.email%></h3>
+            <h3 class="user-info">phone: <%=user.phone%></h3>
+            <h3 class="user-info">DOB: <%=user.DOB.toJSON().slice(0,10)%></h3>
+         </div>
+         <div class="info-container hidden" id="my-shops-container">
+            <h3 class="user-info">Name: <%=shop.name%></h3>
+            <h3 class="user-info">City: <%=shop.city%></h3>
+            <h3 class="user-info">Area: <%=shop.area%></h3>
+            <h3 class="user-info">Rating: <%=shop.rating%></h3>
+         </div>
+         <div class="info-container hidden" id="info-change-container">
+            <form action="/user" method="PUT" class="form" id="user-form">
+               <label>Name: </label>
+               <input class="form-input" type="text" name="name" id="name" value="<%=user.name%>">
+               <label>Email: </label>
+               <input class="form-input" type="email" name="email" id="email" value="<%=user.email%>">
+               <label>Phone: </label>
+               <input class="form-input" type="text" name="phone" id="phone" value="<%=user.phone%>">
+               <label>Date Of Birth: </label>
+               <input class="form-input form-date" type="date" name="dob" id="dob" value="<%=user.DOB.toJSON().slice(0,10)%>">
+               <button class="btn">Change Information</button>
+            </form>
+         </div>
+         <div class="info-container hidden" id="password-change-container">
+            <form action="/changepassword" method="PUT" class="form" id="password-form">
+               <label>Password: </label>
+               <input class="form-input" type="password" name="password" id="password">
+               <label>Password Confirm: </label>
+               <input class="form-input" type="password" name="confirm-password" id="confirm-password">
+               <button class="btn">Change Password</button>
+            </form>
+         </div>
+      </div>
+   </div>
+   <script type="text/javascript" src="/js/script.js"></script>
+   <script type="text/javascript" src="/js/user.js"></script>
+</body>
+</html>

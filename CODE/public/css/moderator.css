@@ -1,0 +1,78 @@
+.main-body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.title {
+   font-size: 2em;
+   font-weight: 500;
+   letter-spacing: 1px;
+   margin: 1em;
+}
+
+.verify-products {
+   max-width: 62.5rem;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.product-information-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   max-width: 20rem;
+   padding: 1rem 0.5rem;
+   margin: 1em;
+   border-radius: 5px;
+   box-shadow: 0px 0px 10px -5px black;
+}
+
+.product-image {
+   object-fit: content;
+   height: 180px;
+   border-radius: 5px;
+}
+
+.product-information {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-size: 1.1rem;
+   padding: 1em 0.5em;
+   text-align: center;
+}
+
+.product-button-container {
+   display: flex;
+   justify-content: space-around;
+}
+
+.verify-btn {
+   border: none;
+   outline: none;
+   background-color: var(--green-primary);
+   padding: 0.5em 1.5em;
+   font-size: 1.5rem;
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+
+.verify-btn:hover {
+   background-color: var(--green-secondary);
+}
+
+.remove-btn {
+   border: none;
+   outline: none;
+   background-color: var(--orange-primary);
+   padding: 0.5em;
+   font-size: 1.5rem;
+   border-radius: 0.5rem;
+   cursor: pointer;
+}
+
+.remove-btn:hover {
+   background-color: var(--orange-secondary);
+}
+
